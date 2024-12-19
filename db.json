@@ -1,0 +1,205 @@
+{
+  "tables": [
+    {
+      "id": "1",
+      "nameCustomer": "nam",
+      "quantity": "2",
+      "status": true
+    },
+    {
+      "id": "2",
+      "nameCustomer": "",
+      "quantity": null,
+      "status": false
+    },
+    {
+      "id": "3",
+      "nameCustomer": "a title",
+      "quantity": null,
+      "status": true
+    },
+    {
+      "id": "4",
+      "nameCustomer": "",
+      "quantity": null,
+      "status": false
+    },
+    {
+      "id": "5",
+      "nameCustomer": "nam",
+      "quantity": "6",
+      "status": true
+    },
+    {
+      "id": "6",
+      "nameCustomer": "hoang",
+      "quantity": "2",
+      "status": true
+    },
+    {
+      "id": "7",
+      "nameCustomer": "hưng",
+      "quantity": "25",
+      "status": true
+    },
+    {
+      "id": "8",
+      "nameCustomer": "hieu",
+      "quantity": null,
+      "status": false
+    },
+    {
+      "id": "9",
+      "nameCustomer": "hieu",
+      "quantity": null,
+      "status": false
+    },
+    {
+      "id": "10",
+      "nameCustomer": "hieu",
+      "quantity": null,
+      "status": false
+    },
+    {
+      "id": "11",
+      "nameCustomer": "hieu",
+      "quantity": null,
+      "status": false
+    },
+    {
+      "id": "12",
+      "nameCustomer": "hieu",
+      "quantity": null,
+      "status": false
+    }
+  ],
+  "foods": [
+    {
+      "id": "4",
+      "foodName": "pasta salad",
+      "img": "https://firebasestorage.googleapis.com/v0/b/restaurant-c18b7.appspot.com/o/images%2Fpasta-salad-with-cherry-tomatoes-fresh-basil-leaves.png?alt=media&token=ef174b00-ca85-4027-9925-547f00f2ac7a",
+      "quantity": null,
+      "price": "119"
+    },
+    {
+      "id": "2",
+      "foodName": "tôm chiên",
+      "img": "https://firebasestorage.googleapis.com/v0/b/restaurant-c18b7.appspot.com/o/images%2Fwhite-shrim.png?alt=media&token=5651c767-7dd3-4388-b299-e007587c1900",
+      "quantity": null,
+      "price": "20"
+    },
+    {
+      "id": "1",
+      "foodName": "bánh bông lan",
+      "img": "https://firebasestorage.googleapis.com/v0/b/restaurant-c18b7.appspot.com/o/images%2Frau%20x%C3%A0o.png?alt=media&token=e6b2da52-9489-4bde-a0a1-0dcf163908bc",
+      "quantity": null,
+      "price": "12"
+    },
+    {
+      "id": "3",
+      "foodName": "DimSum",
+      "img": "https://firebasestorage.googleapis.com/v0/b/restaurant-c18b7.appspot.com/o/images%2Fseafood-pizza.png?alt=media&token=bd4bf86c-1e02-44e6-a64f-6f12e01af07e",
+      "quantity": null,
+      "price": "4"
+    }
+  ],
+  "orders": [
+    {
+      "id": "5",
+      "items": [
+        {
+          "id": "2",
+          "quantity": 2
+        },
+        {
+          "id": "3",
+          "quantity": 2
+        }
+      ]
+    },
+    {
+      "id": "3",
+      "items": [
+        {
+          "id": "3",
+          "quantity": 4
+        },
+        {
+          "id": "4",
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "id": "6",
+      "items": [
+        {
+          "id": "4",
+          "quantity": 1
+        },
+        {
+          "id": "5",
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "id": "1",
+      "items": [
+        {
+          "id": "1",
+          "quantity": 2
+        },
+        {
+          "id": "2",
+          "quantity": 3
+        },
+        {
+          "id": "4",
+          "quantity": 3
+        },
+        {
+          "id": "5",
+          "quantity": 3
+        }
+      ]
+    },
+    {
+      "id": "7",
+      "items": [
+        {
+          "id": "1",
+          "quantity": 1
+        },
+        {
+          "id": "2",
+          "quantity": 1
+        },
+        {
+          "id": "3",
+          "quantity": 1
+        },
+        {
+          "id": "4",
+          "quantity": 3
+        }
+      ]
+    }
+  ],
+  "users": [
+    {
+      "id": "asdasd",
+      "email": "thhg17399@gmail.com",
+      "password": "123",
+      "confirmPassword": "123",
+      "avatar": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcShrwlizhzWaJObSejiDIpZJTQ0DcsS-AxVdA&s"
+    },
+    {
+      "id": "hoangdeptrai",
+      "email": "hoang@gmail.com",
+      "password": "123",
+      "confirmPassword": "123",
+      "avatar": "https://png.pngtree.com/png-clipart/20240321/original/pngtree-avatar-job-businessman-flat-portrait-of-man-png-image_14641967.png"
+    }
+  ]
+}

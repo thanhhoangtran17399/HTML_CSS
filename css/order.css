@@ -1,0 +1,127 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-size: 15px;
+  }
+  
+  img {
+    width: 100%;
+    height: 100%;
+  }
+  li {
+    list-style: none;
+  }
+  a {
+    text-decoration: none;
+  }
+  hr {
+      margin: 0;
+  }
+  ul {
+    margin-bottom: 0px;
+    padding: 0px;
+  }
+  
+  .right {
+    flex: 1;
+  }
+  .side-bar {
+    background-image: linear-gradient(
+      to right,
+      #ff8177 0%,
+      #ff867a 0%,
+      #ff8c7f 21%,
+      #f99185 52%,
+      #cf556c 78%,
+      #b12a5b 100%
+    );
+  
+    .shop-name {
+      height: 83px;
+      span {
+        font-size: 2rem;
+      }
+    }
+
+    ul {
+        display: flex;
+        flex-direction: column;
+        li{
+            align-items: center;
+            text-align: center;
+            i {
+                font-size: 1.5rem;
+                margin-right: 20px;
+              }
+        }
+   
+      .nav-link {
+          padding: 20px;
+          &:hover {
+              background-color: #110b0a;
+          }
+      }
+    }
+  }
+  .header_right {
+    height: 83px;
+    position: relative;
+    background-image: linear-gradient(
+      to top,
+      #ff9a9e 0%,
+      #fecfef 99%,
+      #fecfef 100%
+    );
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  
+    i {
+      font-size: 1.5rem;
+    }
+  
+    .fa-circle-arrow-left {
+      position: absolute;
+      left: 0px;
+      transform: translateX(-50%);
+      font-size: 40px;
+    }
+  
+    .logo {
+      img {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+      }
+    }
+    ul {
+      display: flex;
+      align-items: center;
+      li {
+        margin-right: 3rem;
+        font-weight: 400;
+        font-size: 1.5rem;
+        color: black;
+      }
+    }
+  }
+  
+  main{
+    background-image: linear-gradient(
+      to top,
+      #ff9a9e 0%,
+      #fecfef 99%,
+      #fecfef 100%
+    );
+  }
+  
+  @media only screen and (min-width: 1200px) {
+    .admin {
+      display: flex;
+    }
+  }
+  
+  @media only screen and (max-width: 768px) {
+  }
+  

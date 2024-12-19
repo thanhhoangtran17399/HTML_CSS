@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <!-- Bootstrap CSS v5.2.1 -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="../css/home.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+    />
+    <!-- Add this script tag to your HTML file -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  </head>
+
+  <body>
+    <div class="admin">
+      <div class="side-bar">
+        <div class="d-flex flex-column text-white">
+          <div
+            class="d-flex align-items-center shop-name justify-content-center text-white title"
+          >
+            <span class="hidden item">PINK STORE</span>
+            <i class="fa-solid fa-shop fa-2x item"></i>
+            <div class="button-show-hidden" id="abbreviated">
+              <i class="fa-solid fa-circle-arrow-left fa-3x hidden item"></i>
+              <i class="fa-solid fa-circle-arrow-right fa-3x item"></i>
+            </div>
+          </div>
+          <hr />
+          <ul class="menu">
+            <li>
+              <div
+                onclick="show('dashboard','nav-link-dashboard')"
+                class="nav-link text-white py-2"
+                id="nav-link-dashboard"
+              >
+                <i class="fa-solid fa-money-bill"></i>
+                <span class="hidden item">DASHBOARD</span>
+              </div>
+            </li>
+            <hr />
+            <li>
+              <div
+                onclick="show('reservation','nav-link-reservation')"
+                class="nav-link active text-white py-2"
+                id="nav-link-reservation"
+              >
+                <i class="fa-solid fa-tower-observation"></i>
+                <span class="hidden item">RESERVATION</span>
+              </div>
+            </li>
+            <li>
+              <div
+                onclick="show('order','nav-link-order')"
+                class="nav-link text-white py-2"
+                id="nav-link-order"
+              >
+                <i class="fa-solid fa-utensils"></i>
+                <span class="hidden item">ORDER FOOD</span>
+              </div>
+            </li>
+            <li>
+              <div
+                onclick="show('payBill','nav-link-pay')"
+                class="nav-link text-white py-2"
+                id="nav-link-pay"
+              >
+                <i class="fa-solid fa-money-bill"></i>
+                <span class="hidden item">PAY BILL</span>
+              </div>
+            </li>
+            <li>
+              <div class="nav-link text-white py-2">
+                <i class="fa-solid fa-circle-info"></i>
+                <span class="hidden item">INFOMATION</span>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="right">
+        <div class="header_right py-3 px-5">
+          <ul>
+            <li>
+              <a class="nav-link" href="#"
+                ><i class="fa-solid fa-magnifying-glass fa-2x"></i
+              ></a>
+            </li>
+            <li>
+              <a class="nav-link" href="#"
+                ><i class="fa-solid fa-bell fa-2x"></i
+              ></a>
+            </li>
+            <li>
+              <a class="nav-link" href="#"
+                ><i class="fa-solid fa-envelope fa-2x"></i
+              ></a>
+            </li>
+          </ul>
+          <div onclick="showPopupProfile()" class="logo" id="logo">
+            <img
+              src="https://cdn-icons-png.flaticon.com/512/149/149071.png"
+              alt=""
+              id="avatar"
+            />
+            <div class="popup-profile">
+              <div class="profile">
+                <div>
+                  <div class="profile-name text-nowrap" id="profile-name"></div>
+                  <div class="profile-email" id="profile-email"></div>
+                </div>
+              </div>
+              <hr />
+              <ul class="sidebar-menu">
+                <li>
+                  <span
+                    onclick="logout()"
+                    style="cursor: pointer"
+                    onmouseover="this.style.color='white'"
+                    onmouseout="this.style.color=''"
+                  >
+                    Đăng xuất
+                  </span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <main>
+          <!-- reservation -->
+          <div class="container active" id="reservation">
+            <div
+              class="row row-cols-lg-4 row-cols-md-2 row-cols-1 g-4 py-4 all-tables"
+            ></div>
+          </div>
+
+          <!-- order -->
+          <div class="container order" id="order">
+            <div class="py-3 d-flex justify-content-between align-items-center">
+              <div class="choose-table">
+                <span>Choose a table</span>
+                <select name="choose" id="selectTable">
+                  <option selected disabled>Choose a table</option>
+                </select>
+                <button class="btn btn-pay" onclick="order()">order</button>
+              </div>
+              <div class="w-25">
+                <div class="input-group">
+                  <span class="input-group-text">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                  </span>
+                  <input
+                    type="text"
+                    class="form-control search-food"
+                    placeholder="Tìm kiếm..."
+                  />
+                </div>
+              </div>
+              <button
+                type="button"
+                class="btn btn-primary"
+                data-bs-toggle="modal"
+                data-bs-target="#addFoodModal"
+              >
+                Thêm Món Ăn
+              </button>
+            </div>
+
+            <div
+              class="row row-cols-lg-4 row-cols-md-2 row-cols-sm-1 g-4 py-4 all-foods"
+            ></div>
+          </div>
+
+          <!-- pay bill -->
+          <div class="container p-3" id="payBill">
+            <div class="choose-table py-3">
+              <span>Choose a table</span>
+              <select
+                onChange="showCartBill(this.value)"
+                name="choose"
+                id="selectTableCart"
+              >
+                <option selected disabled>Choose a table</option>
+              </select>
+              <button id="btnPayBill" class="btn btn-pay">pay bill</button>
+            </div>
+            <table class="table">
+              <thead>
+                <tr>
+                  <th scope="col">#</th>
+                  <th scope="col">Image</th>
+                  <th scope="col">Name</th>
+                  <th scope="col">Quantity</th>
+                  <th scope="col">Price</th>
+                </tr>
+              </thead>
+              <tbody class="cart-body"></tbody>
+              <tfoot class="cart-foot"></tfoot>
+            </table>
+          </div>
+
+          <!-- dashboard -->
+          <!-- <div class="container d-flex justify-content-around align-items-center" id="dashboard" style="height: 100vh;">
+            <div class="bar-chart w-50" style="height: 50%;"></div>
+            <div class="pie-chart w-25" style="height: 50%;"></div>
+          </div> -->
+          <div class="container" id="dashboard">
+            <div class="d-flex justify-content-around align-items-center" style="height: 100vh;">
+              <div class="bar-chart w-50" style="height: 50%;"></div>
+              <div class="pie-chart w-25" style="height: 50%;"></div>
+            </div>
+          </div>
+        </main>
+      </div>
+
+      <!-- modal -->
+      <div
+        class="modal fade"
+        id="exampleModal"
+        tabindex="-1"
+        aria-labelledby="exampleModalLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">TABLE BOOKING</h5>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="modal-body">
+              <form id="booking" class="needs-validation" novalidate>
+                <div class="mb-3">
+                  <label for="exampleInputName" class="form-label"
+                    >Customer Name</label
+                  >
+                  <input
+                    type="text"
+                    placeholder="Customer Name"
+                    class="form-control"
+                    id="customerName"
+                    required
+                  />
+                </div>
+                <div class="mb-3">
+                  <label for="exampleInputPQuantity" class="form-label"
+                    >Quantity</label
+                  >
+                  <input
+                    type="number"
+                    placeholder="Quantity"
+                    class="form-control"
+                    id="quantity"
+                    required
+                  />
+                </div>
+                <div class="text-center">
+                  <button
+                    type="button"
+                    class="btn btn-secondary"
+                    data-bs-dismiss="modal"
+                  >
+                    Close
+                  </button>
+                  <button type="submit" class="btn btn-primary">Gửi</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="modal card-modal" id="card-modal" tabindex="-1">
+        <div class="modal-dialog modal-lg">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">Cart</h5>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Image</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Quantity</th>
+                    <th scope="col">Price</th>
+                  </tr>
+                </thead>
+                <tbody class="cart-body-modal">
+                  <!-- <tr>
+                    <th scope="row">1</th>
+                    <td><img src="../img/img11.jpeg" alt="" /></td>
+                    <td>hamburger</td>
+                    <td>$39</td>
+                  </tr> -->
+                </tbody>
+                <tfoot class="cart-foot-modal">
+                  <!-- <tr>
+                    <th scope="col" colspan="4">Total</th>
+                    <th scope="col">$740</th>
+                  </tr> -->
+                </tfoot>
+              </table>
+            </div>
+            <div class="modal-footer">
+              <button
+                type="button"
+                class="btn btn-secondary"
+                data-bs-dismiss="modal"
+              >
+                Close
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- modal thêm món ăn -->
+      <div
+        class="modal fade"
+        id="addFoodModal"
+        tabindex="-1"
+        aria-labelledby="addFoodModalLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="addFoodModalLabel">
+                Thêm Món Ăn Mới
+              </h5>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="modal-body">
+              <!-- Form thêm món ăn -->
+              <form id="formAddNew">
+                <div class="mb-3">
+                  <label for="tenmon" class="form-label">Tên Món Ăn</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="foodName"
+                    name="tenmon"
+                    placeholder="Nhập tên món ăn"
+                  />
+                </div>
+                <div class="mb-3">
+                  <label for="gia" class="form-label">Giá Tiền (VND)</label>
+                  <input
+                    type="number"
+                    class="form-control"
+                    id="price"
+                    name="gia"
+                    placeholder="Nhập giá tiền"
+                  />
+                </div>
+                <div class="mb-3">
+                  <label for="img" class="form-label">Chọn Hình Ảnh</label>
+                  <input
+                    onchange="handleFileChange(event)"
+                    type="file"
+                    class="form-control"
+                    id="imgUpload"
+                    name="img"
+                    accept="image/*"
+                  />
+                  <div class="mt-2">
+                    <img id="img-category" src="../img/logo.png" alt="" />
+                  </div>
+                </div>
+                <button type="submit" class="btn btn-success text-end">
+                  Thêm Món Ăn
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- modal sửa món ăn -->
+      <div
+        class="modal fade"
+        id="editFoodModal"
+        tabindex="-1"
+        aria-labelledby="editFoodModalLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="editFoodModalLabel">Sửa Món Ăn</h5>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="modal-body">
+              <!-- Form sửa món ăn -->
+              <form id="formEdit">
+                <div class="mb-3">
+                  <label for="tenmon" class="form-label">Tên Món Ăn</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="foodName"
+                    name="tenmon"
+                    placeholder="Nhập tên món ăn"
+                  />
+                </div>
+                <div class="mb-3">
+                  <label for="gia" class="form-label">Giá Tiền (VND)</label>
+                  <input
+                    type="number"
+                    class="form-control"
+                    id="price"
+                    name="gia"
+                    placeholder="Nhập giá tiền"
+                  />
+                </div>
+                <div class="mb-3">
+                  <label for="img" class="form-label">Chọn Hình Ảnh</label>
+                  <input
+                    onchange="handleFileChange(event)"
+                    type="file"
+                    class="form-control"
+                    id="imgUpload"
+                    name="img"
+                    accept="image/*"
+                  />
+                  <div class="mt-2">
+                    <img id="imgCategory" src="../img/logo.png" alt="" />
+                  </div>
+                </div>
+                <div class="d-flex justify-content-end">
+                  <button type="submit" class="btn btn-success text-end me-2">
+                    Sửa
+                  </button>
+                  <button
+                    type="button"
+                    class="btn btn-danger"
+                    data-bs-toggle="modal"
+                    data-bs-target="#deleteModal"
+                  >
+                    Xóa
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Modal xóa -->
+      <div
+        class="modal fade"
+        id="deleteModal"
+        tabindex="-1"
+        aria-labelledby="deleteModalLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="deleteModalLabel">Xác nhận xóa</h5>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="modal-body">
+              Bạn có chắc chắn muốn xóa món ăn này không?
+            </div>
+            <div class="modal-footer">
+              <button
+                type="button"
+                class="btn btn-secondary"
+                data-bs-dismiss="modal"
+              >
+                Hủy
+              </button>
+              <button type="submit" class="btn btn-danger btn-del">Xóa</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Firebase App (the core Firebase SDK) -->
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <!-- Firebase Storage -->
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-storage.js"></script>
+    <script src="../js/config.js"></script>
+    <script src="../js//uploadingImg.js"></script>
+    <script src="../js/home.js"></script>
+    <script src="../js/api.js"></script>
+    <script src="../js/validation.js"></script>
+    <script src="../js/getTables.js"></script>
+    <script src="../js/getAllFoods.js"></script>
+    <script src="../js/order.js"></script>
+    <script src="../js/chart.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+      integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+      crossorigin="anonymous"
+    ></script>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+      integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

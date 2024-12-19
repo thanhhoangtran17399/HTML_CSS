@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <!-- Bootstrap CSS v5.2.1 -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+  </head>
+
+  <body>
+    <div class="container mt-5">
+      <div class="row">
+          <!-- Ô Search có biểu tượng kính lúp -->
+          <div class="col-md-8">
+              <div class="input-group">
+                  <span class="input-group-text">
+                      <i class="bi bi-search"></i>
+                  </span>
+                  <input type="text" class="form-control" placeholder="Tìm kiếm...">
+              </div>
+          </div>
+  
+          <!-- Button Thêm Mới -->
+          <div class="col-md-4">
+              <button type="button" class="btn btn-primary w-100">Thêm Mới</button>
+          </div>
+      </div>
+  </div>
+
+
+      <!-- Button trigger modal -->
+      <div class="container mt-5">
+        <button
+          type="button"
+          class="btn btn-primary"
+          data-bs-toggle="modal"
+          data-bs-target="#addFoodModal"
+        >
+          Thêm Món Ăn
+        </button>
+      </div>
+
+      <!-- Modal -->
+      <div
+        class="modal fade"
+        id="addFoodModal"
+        tabindex="-1"
+        aria-labelledby="addFoodModalLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="addFoodModalLabel">
+                Thêm Món Ăn Mới
+              </h5>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="modal-body">
+              <!-- Form thêm món ăn -->
+              <form
+              >
+                <div class="mb-3">
+                  <label for="tenmon" class="form-label">Tên Món Ăn</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="foodName"
+                    name="tenmon"
+                    placeholder="Nhập tên món ăn"
+                  />
+                </div>
+                <div class="mb-3">
+                  <label for="gia" class="form-label">Giá Tiền (VND)</label>
+                  <input
+                    type="number"
+                    class="form-control"
+                    id="price"
+                    name="gia"
+                    placeholder="Nhập giá tiền"
+                  />
+                </div>
+                <div class="mb-3">
+                  <label for="hinhanh" class="form-label">Chọn Hình Ảnh</label>
+                  <input
+                    type="file"
+                    class="form-control"
+                    id="hinhanh"
+                    name="hinhanh"
+                    accept="image/*"
+                  />
+                </div>
+                <button type="submit" class="btn btn-success w-100">
+                  Thêm Món Ăn
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bootstrap 5 JS -->
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+      integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+      crossorigin="anonymous"
+    ></script>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+      integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
